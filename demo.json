@@ -1,0 +1,14 @@
+[
+    {
+        "title": "illiade",
+        "author": "omero",
+        "price": 15.7,
+        "softcopy": true
+    },
+    {
+        "title": "illiade",
+        "author": "odissea",
+        "price": 19.9,
+        "softcopy": true
+    }
+]
