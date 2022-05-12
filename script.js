@@ -64,6 +64,8 @@ try {
 }
 
 let bookList = data.split(/\r?\n/);
+let lines = lines.filter(linea => linea !== ''); 
+//  per togliere ultima linea vuota, che può capitare; 
 
 let properties = [];
 
@@ -71,7 +73,9 @@ for (let i = 0; i < bookList.length; i++) {
     const element = bookList[i];
     if(element === bookList [0]){
         properties = element.split(',')
-    }
+    } 
+
+   
 }
 
 bookList.shift();
@@ -83,7 +87,9 @@ let bookArray = []
         const object = {}
         const lineArray = line.split(',')
         for (let k = 0; k < properties.length; k++) {
-            const property = properties[k];
+            const property = properties[k]; 
+            
+//          property = property.trim()
             object[property] = lineArray[k];
         }
         bookArray.push(object)
@@ -98,4 +104,18 @@ console.log(bookArray);
 //     console.error(err.message);
 // } finally {
 //     console.log('sono nel blocco finally')
-// }
+// } 
+
+//  trasformare file in JSON: 
+
+const jsonArray = JSON.stringify(bookArray); 
+
+console.log('json array', jsonArray); 
+
+try {
+    fs.writeFileSync('./output.json', jsonArray);
+} catch (err) {
+    console.error(err);
+} 
+
+//  funzione trim per togliere spazi;
