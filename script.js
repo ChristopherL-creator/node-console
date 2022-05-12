@@ -63,8 +63,6 @@ try {
     console.error('file non trovato');
 }
 
-
-
 let bookList = data.split(/\r?\n/);
 
 let properties = [];
@@ -91,15 +89,7 @@ let bookArray = []
         bookArray.push(object)
     }
 
-
 console.log(bookArray);
-
-
-
-
-
-
-
 
 // try { //quando non si è sicuri del codice si può scrivere i try che funzionera come un 'if else'
 //     const data = fs.readFileSync('./libri.csv', 'utf8');
